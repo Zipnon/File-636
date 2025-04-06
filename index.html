@@ -2,145 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Authorization Required</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FILE-636</title>
   <style>
     body {
-      background-color: #0b0b0b;
+      background-color: #000;
       color: #ff3c3c;
-      font-family: "Courier New", monospace;
-      padding: 50px;
-      line-height: 1.6;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    h1 {
-      color: #ffffff;
-      font-size: 48px;
-      text-align: center;
-      text-shadow: 0 0 5px red;
-    }
-
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 100px;
-      opacity: 0.2;
-    }
-
-    .step {
-      margin-bottom: 40px;
-      font-size: 20px;
-    }
-
-    .warning {
-      color: #ff0000;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 16px;
-    }
-
-    .glitch {
-      animation: flicker 2s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-      75% { opacity: 0.5; }
-    }
-
-    #conteudo {
+    #login-container, #file-container {
       display: none;
     }
 
-    #login {
-      text-align: center;
-      margin-top: 100px;
+    .visible {
+      display: block;
     }
 
-    #login input {
+    input {
       padding: 10px;
-      font-size: 18px;
-      background: #222;
+      font-size: 16px;
       border: none;
-      border-bottom: 2px solid #ff3c3c;
+      outline: none;
+      background: #111;
       color: #fff;
+      border-bottom: 2px solid #ff3c3c;
+      width: 250px;
+      text-align: center;
     }
 
-    #login button {
-      padding: 10px 20px;
-      margin-left: 10px;
-      font-size: 18px;
+    button {
+      margin-top: 15px;
+      padding: 8px 20px;
       background-color: #ff3c3c;
+      color: #000;
       border: none;
-      color: white;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    #erro {
-      color: red;
-      margin-top: 10px;
+    .glitch-effect {
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px red; }
+      50% { text-shadow: -2px -2px #ff00ff; }
+      100% { text-shadow: 2px 2px cyan; }
+    }
+
+    .distort2 { filter: blur(1px) brightness(1.2); }
+    .distort3 { filter: contrast(1.4) grayscale(0.3); transform: scale(1.01) rotate(0.3deg); }
+    .distort4 { filter: invert(1) blur(2px); }
+    .distort5 {
+      background-color: #000;
+      color: #ff0000;
+      font-size: 0px;
+      animation: shake 0.3s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(1px, 1px); }
+      50% { transform: translate(-1px, -2px); }
+      100% { transform: translate(1px, -1px); }
     }
   </style>
 </head>
 <body>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Great_Seal_of_the_United_States_%28black_and_white%29.svg/1200px-Great_Seal_of_the_United_States_%28black_and_white%29.svg.png" alt="US Gov Logo" class="logo" />
-
-  <!-- TELA DE LOGIN -->
-  <div id="login">
-    <h1>FILE-636</h1>
-    <p>Digite a senha para acessar o conteúdo restrito:</p>
-    <input type="password" id="passwordInput" placeholder="Senha...">
-    <button id="entrarBtn">Entrar</button>
-    <p id="erro"></p>
+  <div id="login-container" class="visible">
+    <div>
+      <h2 class="glitch-effect">Insert Password</h2>
+      <input type="password" id="passwordInput" placeholder="********">
+      <br />
+      <button onclick="checkPassword()">ENTER</button>
+    </div>
   </div>
 
-  <!-- CONTEÚDO SECRETO -->
-  <div id="conteudo">
-    <h1 class="glitch">FILE-636</h1>
-    <p class="warning">This document is classified. Unauthorized access is prohibited.</p>
+  <div id="file-container">
+    <div class="container">
+      <h1>FILE-636</h1>
+      <p><strong>Status:</strong> CONFIDENTIAL - LEVEL 4 ACCESS REQUIRED</p>
+      <p><strong>Subject:</strong> Human Processing Protocol for Selective Salvage Operation</p>
+      <p><strong>Authorized By:</strong> Department of Societal Preservation</p>
 
-    <div class="step">
-      <strong>Step 1:</strong> Identify an individual considered "disposable" by societal standards. Homeless, undocumented, debt-ridden or publicly disgraced citizens are prioritized.
+      <h2>Step 1: Subject Selection</h2>
+      <p>Identify an individual deemed <em>non-essential</em> or “disposable” within societal structures.</p>
+
+      <h2>Step 2: Extraction & Containment</h2>
+      <p>Deploy Field Recovery Units (FRUs) to extract the target discreetly...</p>
+
+      <h2>Step 3: Assembly of Witness Personnel</h2>
+      <p>Clearance Level 5 personnel required. Black Compliance Waiver (BCW-45A) mandatory.</p>
+
+      <h2>Step 4: Instrumentation Protocol</h2>
+      <p>Prepare Procedure Room-3B. Conscious state mandatory.</p>
+
+      <h2>Step 5: Execution Phase</h2>
+      <p>Begin physical and emotional degradation until facial deanimation confirmed.</p>
+
+      <h2>Finalization</h2>
+      <p>Incineration and erasure. Debrief blackout: 7 days minimum.</p>
+
+      <p class="classified">THIS DOCUMENT IS NOT TO BE DISTRIBUTED OR SHARED. VIOLATORS WILL BE NEUTRALIZED UNDER ORDER 73-K.</p>
     </div>
-
-    <div class="step">
-      <strong>Step 2:</strong> Extract and transfer the individual to a designated Human Containment Facility (HCF), located in undisclosed government zones.
-    </div>
-
-    <div class="step">
-      <strong>Step 3:</strong> Assemble the participating members. These include global leaders, elite figures, high-value personnel — individuals whose survival is deemed essential.
-    </div>
-
-    <div class="step">
-      <strong>Step 4:</strong> Prepare all sacrifice equipment. Awaken the subject. Ensure they are fully conscious and responsive for the procedure.
-    </div>
-
-    <div class="step">
-      <strong>Step 5:</strong> Torture. Torture. Torture. Continue without interruption until all traces of life and soul are extinguished from the subject’s eyes.
-    </div>
-
-    <div class="step">
-      <strong>Final Result:</strong> Upon death, the tortured soul is redirected to infernal containment. This act ensures the salvation of every participant involved in the session.
-    </div>
-
-    <p class="warning">This file is part of the Non-Paradise Protocol. Truth is no longer a privilege.</p>
   </div>
 
-  <!-- SCRIPT -->
   <script>
-    document.getElementById('entrarBtn').addEventListener('click', function () {
-      const senha = document.getElementById('passwordInput').value;
-      if (senha === 'Hellog') {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('conteudo').style.display = 'block';
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      if (input === "Hellog") {
+        document.getElementById('login-container').classList.remove('visible');
+        document.getElementById('file-container').classList.add('visible');
+        startGlitches();
       } else {
-        document.getElementById('erro').textContent = 'Senha incorreta.';
+        alert("Incorrect password.");
       }
-    });
+    }
+
+    function startGlitches() {
+      const container = document.querySelector('.container');
+      setTimeout(() => container.classList.add('distort2'), 2 * 60 * 1000); // 2 min
+      setTimeout(() => container.classList.add('distort3'), 3 * 60 * 1000); // 3 min
+      setTimeout(() => container.classList.add('distort4'), 4 * 60 * 1000); // 4 min
+      setTimeout(() => {
+        container.classList.add('distort5');
+        container.innerHTML = `
+          <h1>ACCESS REVOKED</h1>
+          <p>This device is no longer authorized to access Department FILE-636.</p>
+          <p style="font-size: 12px; color: #aaa;">Violation reported to government oversight node: Sector-39</p>
+        `;
+      }, 5 * 60 * 1000); // 5 min
+    }
   </script>
 </body>
 </html>
+
