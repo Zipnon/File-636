@@ -2,74 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Authorization Required</title>
+  <title>FILE-636 - Department Directive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     body {
-      background-color: #000;
-      color: #ff3c3c;
-      font-family: 'Courier New', monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-    }
-
-    #login-container, #file-container {
-      display: none;
-    }
-
-    .visible {
-      display: block;
-    }
-
-    input {
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      outline: none;
-      background: #111;
-      color: #fff;
-      border-bottom: 2px solid #ff3c3c;
-      width: 250px;
-      text-align: center;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 8px 20px;
-      background-color: #ff3c3c;
-      color: #000;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .glitch-effect {
-      animation: glitch 1s infinite;
-    }
-
-    @keyframes glitch {
-      0% { text-shadow: 2px 2px red; }
-      50% { text-shadow: -2px -2px #ff00ff; }
-      100% { text-shadow: 2px 2px cyan; }
-    }
-
-    .distort2 { filter: blur(1px) brightness(1.2); }
-    .distort3 { filter: contrast(1.4) grayscale(0.3); transform: scale(1.01) rotate(0.3deg); }
-    .distort4 { filter: invert(1) blur(2px); }
-    .distort5 {
-      background-color: #000;
-      color: #ff0000;
-      font-size: 0px;
-      animation: shake 0.3s infinite;
-    }
-
-    @keyframes shake {
-      0% { transform: translate(1px, 1px); }
-      50% { transform: translate(-1px, -2px); }
-      100% { transform: translate(1px, -1px); }
+      padding: 0;
+      background-color: #1a0000;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ffcccc;
     }
 
     .container {
@@ -106,51 +47,88 @@
       color: #cc0000;
       margin-top: 60px;
     }
+
+    /* GLITCH EFFECTS */
+    .distort2 { filter: blur(1px) brightness(1.2); }
+    .distort3 { filter: contrast(1.4) grayscale(0.3); transform: scale(1.01) rotate(0.3deg); }
+    .distort4 { filter: invert(1) blur(2px); }
+    .distort5 {
+      background-color: #000;
+      color: #ff0000;
+      font-size: 0px;
+      animation: shake 0.3s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(1px, 1px); }
+      50% { transform: translate(-1px, -2px); }
+      100% { transform: translate(1px, -1px); }
+    }
   </style>
 </head>
 <body>
-  <div id="login-container" class="visible">
-    <div>
-      <h2 class="glitch-effect">Insert Password</h2>
-      <input type="password" id="passwordInput" placeholder="********">
-      <br />
-      <button onclick="checkPassword()">ENTER</button>
-    </div>
+  <div class="container" id="glitchTarget">
+    <h1>FILE-636</h1>
+    <p><strong>Status:</strong> CONFIDENTIAL - LEVEL 4 ACCESS REQUIRED</p>
+    <p><strong>Subject:</strong> Human Processing Protocol for Selective Salvage Operation</p>
+    <p><strong>Authorized By:</strong> Department of Societal Preservation</p>
+
+    <h2>Step 1: Subject Selection</h2>
+    <p>
+      Identify an individual deemed <em>non-essential</em> or “disposable” within societal structures.
+      Subjects may include, but are not limited to: undocumented persons, long-term homeless, inmates, 
+      or individuals with no known next of kin.
+    </p>
+
+    <h2>Step 2: Extraction & Containment</h2>
+    <p>
+      Deploy Field Recovery Units (FRUs) to extract the target discreetly. Upon retrieval, 
+      the subject is to be placed in a Human Containment Chamber (HCC) within Site-09 or Site-17.
+      Monitoring should begin immediately for psychological degradation indicators.
+    </p>
+
+    <h2>Step 3: Assembly of Witness Personnel</h2>
+    <p>
+      Select and invite Clearance Level 5 personnel for observational purposes. Attendees may include high-ranking officials, 
+      elite benefactors, and representatives from approved global alliances. All parties must sign the Black Compliance Waiver (BCW-45A).
+    </p>
+
+    <h2>Step 4: Instrumentation Protocol</h2>
+    <p>
+      Prepare Procedure Room-3B with assigned Instrument Kit #636-Δ. Subject must be awakened with 
+      Compound 7VX to ensure conscious cognitive response. Sedation is prohibited during the procedure unless failure of objective occurs.
+    </p>
+
+    <h2>Step 5: Execution Phase</h2>
+    <p>
+      Begin tactical sequence of physical, emotional, and sensory degradation. The objective is to fully 
+      collapse the identity structure of the subject. Monitors must record facial deanimation to confirm completion.
+    </p>
+
+    <h2>Finalization</h2>
+    <p>
+      Upon termination, remains are to be processed per Protocol-Ash8 (Incineration & Erasure). All involved parties must undergo a 
+      7-day debrief blackout to ensure psychological reset and avoid contamination.
+    </p>
+
+    <p class="classified">THIS DOCUMENT IS NOT TO BE DISTRIBUTED OR SHARED. VIOLATORS WILL BE NEUTRALIZED UNDER ORDER 73-K.</p>
   </div>
 
-  <div id="file-container">
-    <div class="container" id="glitchTarget">
-      <h1>FILE-636</h1>
-      <p><strong>Status:</strong> CONFIDENTIAL - LEVEL 4 ACCESS REQUIRED</p>
-      <p><strong>Subject:</strong> Human Processing Protocol for Selective Salvage Operation</p>
-      <p><strong>Authorized By:</strong> Department of Societal Preservation</p>
+  <script>
+    const target = document.getElementById("glitchTarget");
 
-      <h2>Step 1: Subject Selection</h2>
-      <p>
-        Identify an individual deemed <em>non-essential</em> or “disposable” within societal structures.
-        Subjects may include, but are not limited to: undocumented persons, long-term homeless, inmates, 
-        or individuals with no known next of kin.
-      </p>
+    setTimeout(() => target.classList.add("distort2"), 2 * 60 * 1000); // 2 min
+    setTimeout(() => target.classList.add("distort3"), 3 * 60 * 1000); // 3 min
+    setTimeout(() => target.classList.add("distort4"), 4 * 60 * 1000); // 4 min
 
-      <h2>Step 2: Extraction & Containment</h2>
-      <p>
-        Deploy Field Recovery Units (FRUs) to extract the target discreetly. Upon retrieval, 
-        the subject is to be placed in a Human Containment Chamber (HCC) within Site-09 or Site-17.
-        Monitoring should begin immediately for psychological degradation indicators.
-      </p>
-
-      <h2>Step 3: Assembly of Witness Personnel</h2>
-      <p>
-        Select and invite Clearance Level 5 personnel for observational purposes. Attendees may include high-ranking officials, 
-        elite benefactors, and representatives from approved global alliances. All parties must sign the Black Compliance Waiver (BCW-45A).
-      </p>
-
-      <h2>Step 4: Instrumentation Protocol</h2>
-      <p>
-        Prepare Procedure Room-3B with assigned Instrument Kit #636-Δ. Subject must be awakened with 
-        Compound 7VX to ensure conscious cognitive response. Sedation is prohibited during the procedure unless failure of objective occurs.
-      </p>
-
-      <h2>Step 5: Execution Phase</h2>
-      <p>
-        Begin tactical sequence of physical, emotional, and sensory degradation. The objective is
+    setTimeout(() => {
+      target.classList.add("distort5");
+      target.innerHTML = `
+        <h1 style="font-size: 40px; color: red;">ACCESS REVOKED</h1>
+        <p style="font-size: 16px; color: #ff9999;">This device is no longer authorized to view Department FILE-636.</p>
+        <p style="font-size: 12px; color: #999;">Violation reported to government oversight node: Sector-39</p>
+      `;
+    }, 5 * 60 * 1000); // 5 min
+  </script>
+</body>
+</html>
