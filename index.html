@@ -11,14 +11,15 @@
       font-family: "Courier New", monospace;
       padding: 50px;
       line-height: 1.6;
-      transition: all 0.3s ease;
     }
+
     h1 {
       color: #ffffff;
       font-size: 48px;
       text-align: center;
       text-shadow: 0 0 5px red;
     }
+
     .logo {
       position: absolute;
       top: 20px;
@@ -26,10 +27,12 @@
       width: 100px;
       opacity: 0.2;
     }
+
     .step {
       margin-bottom: 40px;
       font-size: 20px;
     }
+
     .warning {
       color: #ff0000;
       font-weight: bold;
@@ -38,6 +41,7 @@
       margin-bottom: 30px;
       font-size: 16px;
     }
+
     .glitch {
       animation: flicker 2s infinite;
     }
@@ -48,52 +52,95 @@
       75% { opacity: 0.5; }
     }
 
-    .hidden {
+    #conteudo {
       display: none;
     }
 
-    .distort {
-      filter: blur(1px) contrast(1.5);
-    }
-
-    .tremble {
-      animation: tremble 0.2s infinite;
-    }
-
-    @keyframes tremble {
-      0% { transform: translate(1px, 0); }
-      50% { transform: translate(-1px, 1px); }
-      100% { transform: translate(1px, -1px); }
-    }
-
-    #blockScreen {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      color: red;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    #login {
       text-align: center;
-      font-size: 24px;
-      z-index: 999;
-      padding: 30px;
+      margin-top: 100px;
+    }
+
+    #login input {
+      padding: 10px;
+      font-size: 18px;
+      background: #222;
+      border: none;
+      border-bottom: 2px solid #ff3c3c;
+      color: #fff;
+    }
+
+    #login button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 18px;
+      background-color: #ff3c3c;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    #erro {
+      color: red;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-
-<div id="login">
-  <h1 class="glitch">FILE-636</h1>
-  <p style="text-align:center;">Enter Access Password:</p>
-  <input type="password" id="passwordInput" style="display:block;margin:0 auto;margin-bottom:20px;padding:8px;">
-  <button onclick="checkPassword()" style="display:block;margin:0 auto;">ACCESS</button>
-  <p id="error" style="text-align:center;color:red;"></p>
-</div>
-
-<div id="content" class="hidden">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Great_Seal_of_the_United_States_%28black_and_white%29.svg/1200px-Great_Seal_of_the_United_States_%28black_and_white%29.svg.png" alt="US Gov Logo" class="logo" />
-  <h1 class="glitch">FILE-636</h1
+
+  <!-- TELA DE LOGIN -->
+  <div id="login">
+    <h1>FILE-636</h1>
+    <p>Digite a senha para acessar o conteúdo restrito:</p>
+    <input type="password" id="passwordInput" placeholder="Senha...">
+    <button onclick="checkPassword()">Entrar</button>
+    <p id="erro"></p>
+  </div>
+
+  <!-- CONTEÚDO SECRETO -->
+  <div id="conteudo">
+    <h1 class="glitch">FILE-636</h1>
+    <p class="warning">This document is classified. Unauthorized access is prohibited.</p>
+
+    <div class="step">
+      <strong>Step 1:</strong> Identify an individual considered "disposable" by societal standards. Homeless, undocumented, debt-ridden or publicly disgraced citizens are prioritized.
+    </div>
+
+    <div class="step">
+      <strong>Step 2:</strong> Extract and transfer the individual to a designated Human Containment Facility (HCF), located in undisclosed government zones.
+    </div>
+
+    <div class="step">
+      <strong>Step 3:</strong> Assemble the participating members. These include global leaders, elite figures, high-value personnel — individuals whose survival is deemed essential.
+    </div>
+
+    <div class="step">
+      <strong>Step 4:</strong> Prepare all sacrifice equipment. Awaken the subject. Ensure they are fully conscious and responsive for the procedure.
+    </div>
+
+    <div class="step">
+      <strong>Step 5:</strong> Torture. Torture. Torture. Continue without interruption until all traces of life and soul are extinguished from the subject’s eyes.
+    </div>
+
+    <div class="step">
+      <strong>Final Result:</strong> Upon death, the tortured soul is redirected to infernal containment. This act ensures the salvation of every participant involved in the session.
+    </div>
+
+    <p class="warning">This file is part of the Non-Paradise Protocol. Truth is no longer a privilege.</p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const senha = document.getElementById('passwordInput').value;
+      if (senha === 'Hellog') {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('conteudo').style.display = 'block';
+      } else {
+        document.getElementById('erro').textContent = 'Senha incorreta.';
+      }
+    }
+  </script>
+</body>
+</html>
 
