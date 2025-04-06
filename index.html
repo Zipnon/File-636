@@ -94,7 +94,7 @@
     <h1>FILE-636</h1>
     <p>Digite a senha para acessar o conteúdo restrito:</p>
     <input type="password" id="passwordInput" placeholder="Senha...">
-    <button onclick="checkPassword()">Entrar</button>
+    <button id="entrarBtn">Entrar</button>
     <p id="erro"></p>
   </div>
 
@@ -130,8 +130,9 @@
     <p class="warning">This file is part of the Non-Paradise Protocol. Truth is no longer a privilege.</p>
   </div>
 
+  <!-- SCRIPT -->
   <script>
-    function checkPassword() {
+    document.getElementById('entrarBtn').addEventListener('click', function () {
       const senha = document.getElementById('passwordInput').value;
       if (senha === 'Hellog') {
         document.getElementById('login').style.display = 'none';
@@ -139,8 +140,9 @@
       } else {
         document.getElementById('erro').textContent = 'Senha incorreta.';
       }
-    }
+    });
   </script>
 </body>
 </html>
+
 
