@@ -3,107 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FILE-636 - Department Directive</title>
+  <title>FILE-636</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #1a0000;
-      font-family: 'Courier New', Courier, monospace;
-      color: #ffcccc;
-      background-image: url('ChatGPT_image_5_de_abr._de_2025_20_27_16-removebg-preview.png');
-      background-repeat: no-repeat;
-      background-size: 350px;
-      background-position: top left;
-      background-attachment: fixed;
+      background-color: #0b0b0b;
+      color: #ff3c3c;
+      font-family: "Courier New", monospace;
+      padding: 50px;
+      line-height: 1.6;
+      transition: all 0.3s ease;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 100px auto;
-      padding: 30px;
-      background-color: rgba(20, 0, 0, 0.85);
-      border: 2px solid #660000;
-      box-shadow: 0 0 25px #990000;
-    }
-
     h1 {
+      color: #ffffff;
+      font-size: 48px;
       text-align: center;
-      font-size: 50px;
-      color: #ff0000;
-      letter-spacing: 4px;
+      text-shadow: 0 0 5px red;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      opacity: 0.2;
+    }
+    .step {
       margin-bottom: 40px;
+      font-size: 20px;
     }
-
-    h2 {
-      font-size: 26px;
-      color: #cc4444;
-      margin-top: 40px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .classified {
+    .warning {
+      color: #ff0000;
+      font-weight: bold;
+      text-transform: uppercase;
       text-align: center;
-      font-size: 14px;
-      color: #cc0000;
-      margin-top: 60px;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+    .glitch {
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+      75% { opacity: 0.5; }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .distort {
+      filter: blur(1px) contrast(1.5);
+    }
+
+    .tremble {
+      animation: tremble 0.2s infinite;
+    }
+
+    @keyframes tremble {
+      0% { transform: translate(1px, 0); }
+      50% { transform: translate(-1px, 1px); }
+      100% { transform: translate(1px, -1px); }
+    }
+
+    #blockScreen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 24px;
+      z-index: 999;
+      padding: 30px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>FILE-636</h1>
 
-    <p><strong>Status:</strong> CONFIDENTIAL - LEVEL 4 ACCESS REQUIRED</p>
-    <p><strong>Subject:</strong> Human Processing Protocol for Selective Salvage Operation</p>
-    <p><strong>Authorized By:</strong> Department of Societal Preservation</p>
+<div id="login">
+  <h1 class="glitch">FILE-636</h1>
+  <p style="text-align:center;">Enter Access Password:</p>
+  <input type="password" id="passwordInput" style="display:block;margin:0 auto;margin-bottom:20px;padding:8px;">
+  <button onclick="checkPassword()" style="display:block;margin:0 auto;">ACCESS</button>
+  <p id="error" style="text-align:center;color:red;"></p>
+</div>
 
-    <h2>Step 1: Subject Selection</h2>
-    <p>
-      Identify an individual deemed <em>non-essential</em> or “disposable” within societal structures.
-      Subjects may include, but are not limited to: undocumented persons, long-term homeless, inmates, 
-      or individuals with no known next of kin.
-    </p>
-
-    <h2>Step 2: Extraction & Containment</h2>
-    <p>
-      Deploy Field Recovery Units (FRUs) to extract the target discreetly. Upon retrieval, 
-      the subject is to be placed in a Human Containment Chamber (HCC) within Site-09 or Site-17.
-      Monitoring should begin immediately for psychological degradation indicators.
-    </p>
-
-    <h2>Step 3: Assembly of Witness Personnel</h2>
-    <p>
-      Select and invite Clearance Level 5 personnel for observational purposes. Attendees may include high-ranking officials, 
-      elite benefactors, and representatives from approved global alliances. All parties must sign the Black Compliance Waiver (BCW-45A).
-    </p>
-
-    <h2>Step 4: Instrumentation Protocol</h2>
-    <p>
-      Prepare Procedure Room-3B with assigned Instrument Kit #636-Δ. Subject must be awakened with 
-      Compound 7VX to ensure conscious cognitive response. Sedation is prohibited during the procedure unless failure of objective occurs.
-    </p>
-
-    <h2>Step 5: Execution Phase</h2>
-    <p>
-      Begin tactical sequence of physical, emotional, and sensory degradation. The objective is to fully 
-      collapse the identity structure of the subject. Monitors must record facial deanimation to confirm completion.
-    </p>
-
-    <h2>Finalization</h2>
-    <p>
-      Upon termination, remains are to be processed per Protocol-Ash8 (Incineration & Erasure). All involved parties must undergo a 
-      7-day debrief blackout to ensure psychological reset and avoid contamination.
-    </p>
-
-    <p class="classified">THIS DOCUMENT IS NOT TO BE DISTRIBUTED OR SHARED. VIOLATORS WILL BE NEUTRALIZED UNDER ORDER 73-K.</p>
-  </div>
-</body>
-</html>
-
-
+<div id="content" class="hidden">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Great_Seal_of_the_United_States_%28black_and_white%29.svg/1200px-Great_Seal_of_the_United_States_%28black_and_white%29.svg.png" alt="US Gov Logo" class="logo" />
+  <h1 class="glitch">FILE-636</h1
 
