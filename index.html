@@ -52,7 +52,7 @@
       75% { opacity: 0.5; }
     }
 
-    #conteudo {
+    #content {
       display: none;
     }
 
@@ -80,7 +80,7 @@
       cursor: pointer;
     }
 
-    #erro {
+    #error {
       color: red;
       margin-top: 10px;
     }
@@ -89,60 +89,6 @@
 <body>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Great_Seal_of_the_United_States_%28black_and_white%29.svg/1200px-Great_Seal_of_the_United_States_%28black_and_white%29.svg.png" alt="US Gov Logo" class="logo" />
 
-  <!-- TELA DE LOGIN -->
-  <div id="login">
-    <h1>FILE-636</h1>
-    <p>Digite a senha para acessar o conteúdo restrito:</p>
-    <input type="password" id="passwordInput" placeholder="Senha...">
-    <button id="entrarBtn">Entrar</button>
-    <p id="erro"></p>
-  </div>
-
-  <!-- CONTEÚDO SECRETO -->
-  <div id="conteudo">
-    <h1 class="glitch">FILE-636</h1>
-    <p class="warning">This document is classified. Unauthorized access is prohibited.</p>
-
-    <div class="step">
-      <strong>Step 1:</strong> Identify an individual considered "disposable" by societal standards. Homeless, undocumented, debt-ridden or publicly disgraced citizens are prioritized.
-    </div>
-
-    <div class="step">
-      <strong>Step 2:</strong> Extract and transfer the individual to a designated Human Containment Facility (HCF), located in undisclosed government zones.
-    </div>
-
-    <div class="step">
-      <strong>Step 3:</strong> Assemble the participating members. These include global leaders, elite figures, high-value personnel — individuals whose survival is deemed essential.
-    </div>
-
-    <div class="step">
-      <strong>Step 4:</strong> Prepare all sacrifice equipment. Awaken the subject. Ensure they are fully conscious and responsive for the procedure.
-    </div>
-
-    <div class="step">
-      <strong>Step 5:</strong> Torture. Torture. Torture. Continue without interruption until all traces of life and soul are extinguished from the subject’s eyes.
-    </div>
-
-    <div class="step">
-      <strong>Final Result:</strong> Upon death, the tortured soul is redirected to infernal containment. This act ensures the salvation of every participant involved in the session.
-    </div>
-
-    <p class="warning">This file is part of the Non-Paradise Protocol. Truth is no longer a privilege.</p>
-  </div>
-
-  <!-- SCRIPT -->
-  <script>
-    document.getElementById('entrarBtn').addEventListener('click', function () {
-      const senha = document.getElementById('passwordInput').value;
-      if (senha === 'Hellog') {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('conteudo').style.display = 'block';
-      } else {
-        document.getElementById('erro').textContent = 'Senha incorreta.';
-      }
-    });
-  </script>
-</body>
-</html>
+  <!-- LOGIN SCREEN -->
 
 
