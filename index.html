@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>FILE-636 - Department Directive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FILE-636 - Department Directive</title>
   <style>
     body {
       margin: 0;
@@ -11,6 +11,11 @@
       background-color: #1a0000;
       font-family: 'Courier New', Courier, monospace;
       color: #ffcccc;
+      background-image: url('ChatGPT_image_5_de_abr._de_2025_20_27_16-removebg-preview.png');
+      background-repeat: no-repeat;
+      background-size: 350px;
+      background-position: top left;
+      background-attachment: fixed;
     }
 
     .container {
@@ -47,28 +52,12 @@
       color: #cc0000;
       margin-top: 60px;
     }
-
-    /* GLITCH EFFECTS */
-    .distort2 { filter: blur(1px) brightness(1.2); }
-    .distort3 { filter: contrast(1.4) grayscale(0.3); transform: scale(1.01) rotate(0.3deg); }
-    .distort4 { filter: invert(1) blur(2px); }
-    .distort5 {
-      background-color: #000;
-      color: #ff0000;
-      font-size: 0px;
-      animation: shake 0.3s infinite;
-    }
-
-    @keyframes shake {
-      0% { transform: translate(1px, 1px); }
-      50% { transform: translate(-1px, -2px); }
-      100% { transform: translate(1px, -1px); }
-    }
   </style>
 </head>
 <body>
-  <div class="container" id="glitchTarget">
+  <div class="container">
     <h1>FILE-636</h1>
+
     <p><strong>Status:</strong> CONFIDENTIAL - LEVEL 4 ACCESS REQUIRED</p>
     <p><strong>Subject:</strong> Human Processing Protocol for Selective Salvage Operation</p>
     <p><strong>Authorized By:</strong> Department of Societal Preservation</p>
@@ -113,22 +102,5 @@
 
     <p class="classified">THIS DOCUMENT IS NOT TO BE DISTRIBUTED OR SHARED. VIOLATORS WILL BE NEUTRALIZED UNDER ORDER 73-K.</p>
   </div>
-
-  <script>
-    const target = document.getElementById("glitchTarget");
-
-    setTimeout(() => target.classList.add("distort2"), 2 * 60 * 1000); // 2 min
-    setTimeout(() => target.classList.add("distort3"), 3 * 60 * 1000); // 3 min
-    setTimeout(() => target.classList.add("distort4"), 4 * 60 * 1000); // 4 min
-
-    setTimeout(() => {
-      target.classList.add("distort5");
-      target.innerHTML = `
-        <h1 style="font-size: 40px; color: red;">ACCESS REVOKED</h1>
-        <p style="font-size: 16px; color: #ff9999;">This device is no longer authorized to view Department FILE-636.</p>
-        <p style="font-size: 12px; color: #999;">Violation reported to government oversight node: Sector-39</p>
-      `;
-    }, 5 * 60 * 1000); // 5 min
-  </script>
 </body>
 </html>
